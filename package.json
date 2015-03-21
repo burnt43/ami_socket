@@ -1,0 +1,6 @@
+{
+  "name": "ami_socket",
+  "description": "Get AMI Message",
+  "version": "0.0.1",
+  "dependencies": {}
+}
