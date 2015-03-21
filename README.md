@@ -55,7 +55,7 @@ ami_socket.on(AMI_EVENT, function (DATA) {} );
 ### Example
 
 **foobar.js**
-```
+``` javascript
 var ami_socket = require('ami_socket');
 ami_socket.connect("localhost",5038,"client","foobar");
 
