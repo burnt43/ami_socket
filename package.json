@@ -2,5 +2,25 @@
   "name": "ami_socket",
   "description": "Connects to Asterisk's Manager Interface port and emits events per each AMI event.",
   "version": "0.0.1",
-  "dependencies": {}
+  "dependencies": {},
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/burnt43/ami_socket.git"
+  },
+  "keywords": [
+    "asterisk",
+    "ami",
+    "AMI",
+    "manager",
+    "interface"
+  ],
+  "author": "James Carson <jms.crsn@gmail.com> (https://github.com/burnt43)",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/burnt43/ami_socket/issues"
+  }
 }

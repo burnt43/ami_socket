@@ -22,6 +22,7 @@ module.exports.connect = function (host,port,username,password) {
     ami_event_hash = {};
 
     function emit_event(hash) {
+      //console.log(hash)
       module.exports.emit(hash['Event'],hash);
     }
 
