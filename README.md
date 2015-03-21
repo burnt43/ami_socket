@@ -4,9 +4,20 @@
 This is a module written in node.js that connects to an Asterisk Manager Interface(AMI), parses the messages Asterisk sends, and emits events per each AMI event.
 
 ### Usage
+- **add ami_socket to your package.json**
+```
+  {
+    "name": "foobar",
+    ...
+    "dependencies": {
+      ...
+      "ami_socket": ">0.0.1"
+    }
+  }
+```
 - **require the module**
 ```
-var ami_socket = require('./ami_socket.js');
+var ami_socket = require('ami_socket');
 ```
 - **connect to an AMI server**
 ```
@@ -44,7 +55,7 @@ ami_socket.on(AMI_EVENT, function (DATA) {} );
 
 **foobar.js**
 ```
-var ami_socket = require('./ami_socket.js');
+var ami_socket = require('ami_socket');
 ami_socket.connect("localhost",5038,"client","foobar");
 
 //now you can listen for any AMI event like below
