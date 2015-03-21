@@ -1,6 +1,7 @@
 var net = require('net');
-//var EventEmitter = require('events').EventEmitter;
+var EventEmitter = require('events').EventEmitter;
 
+module.exports = new EventEmitter();
 module.exports.connect = function (host,port,username,password) {
   var client = net.Socket();
 
@@ -21,7 +22,7 @@ module.exports.connect = function (host,port,username,password) {
     ami_event_hash = {};
 
     function emit_event(hash) {
-      console.log(hash);
+      module.exports.emit(hash['Event'],hash);
     }
 
     function parse_line (line) {
@@ -31,6 +32,7 @@ module.exports.connect = function (host,port,username,password) {
 
       if ( name == 'Event' ) {
         ami_event_found = true;
+        ami_event_hash[name] = info;
       } else if ( name == '' ) {
         if ( ami_event_found ) {
           emit_event(ami_event_hash);
