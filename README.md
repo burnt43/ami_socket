@@ -15,6 +15,7 @@ This is a module written in node.js that connects to an Asterisk Manager Interfa
     }
   }
 ```
+- **npm install**
 - **require the module**
 ```
 var ami_socket = require('ami_socket');
