@@ -5,7 +5,7 @@ This is a module written in node.js that connects to an Asterisk Manager Interfa
 
 ### Usage
 - **add ami_socket to your package.json**
-```
+``` json
   {
     "name": "foobar",
     ...
@@ -17,15 +17,15 @@ This is a module written in node.js that connects to an Asterisk Manager Interfa
 ```
 - **npm install**
 - **require the module**
-```
+``` javascript
 var ami_socket = require('ami_socket');
 ```
 - **connect to an AMI server**
-```
+``` javascript
 ami_socket.connect(host,port,username,password);
 ```
 - **listen for events**
-```
+``` javascript
 ami_socket.on(AMI_EVENT, function (DATA) {} );
 ```
 **AMI_EVENT is the name of an AMI Event. e.g.**
@@ -36,7 +36,7 @@ ami_socket.on(AMI_EVENT, function (DATA) {} );
 * Newexten
 
 **DATA is a hash of the message. e.g. for a QueueMemberStatus message**
-```
+``` javascript
 {
   Event: 'QueueMemberStatus',
   Privilege: 'agent,all',
