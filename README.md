@@ -56,6 +56,7 @@ ami_socket.on(AMI_EVENT, function (DATA) {} );
 
 **foobar.js**
 ``` javascript
+//simple program to open up a connect to AMI and listen for PeerStatus events
 var ami_socket = require('ami_socket');
 ami_socket.connect("localhost",5038,"client","foobar");
 
