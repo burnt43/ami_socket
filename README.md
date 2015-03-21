@@ -58,7 +58,7 @@ ami_socket.on('PeerStatus', function (data) {
   );
 });
 ```
-
+**Running foobar.js in a terminal**
 <pre>
 $ node foobar.js
 Peer [SIP/261] is Registered from 84.89.45.14:20826
