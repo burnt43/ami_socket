@@ -4,26 +4,26 @@
 This is a module written in node.js that connects to an Asterisk Manager Interface(AMI), parses the messages Asterisk sends, and emits events per each AMI event.
 
 ### Usage
-1. require the module
+- **require the module**
 ```
 var ami_socket = require('./ami_socket.js');
 ```
-2. connect to an AMI server
+- **connect to an AMI server**
 ```
 ami_socket.connect(host,port,username,password);
 ```
-3. listen for events
+- **listen for events**
 ```
-ami_socket.on(AMI_EVENT, function (data) {) );
+ami_socket.on(AMI_EVENT, function (DATA) {} );
 ```
-Where AMI_EVENT is the name of an AMI Event. e.g.
+**AMI_EVENT is the name of an AMI Event. e.g.**
 * PeerStatus
 * QueueMemberStatus
 * Hangup
 * Cdr
 * Newexten
 
-And data is a hash of the message. e.g. for a QueueMemberStatus message
+**DATA** is a hash of the message. e.g. for a QueueMemberStatus message
 ```
 {
   Event: 'QueueMemberStatus',
@@ -42,6 +42,7 @@ And data is a hash of the message. e.g. for a QueueMemberStatus message
 
 ### Example
 
+**foobar.js**
 ```
 var ami_socket = require('./ami_socket.js');
 ami_socket.connect(host,port,username,password);
@@ -51,3 +52,11 @@ ami_socket.on('PeerStatus', function (data) {
   console.log('Peer [' + data['Peer'] + '] is ' + data['PeerStatus'] + ' from ' + data['Address']);
 });
 ```
+
+<pre>
+$ node foobar.js
+Peer [SIP/261] is Registered from 84.89.45.14:20826
+Peer [SIP/107] is Registered from 100.19.61.99:5060
+Peer [SIP/129] is Registered from 23.190.17.235:5060
+...
+</pre>
