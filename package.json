@@ -1,6 +1,6 @@
 {
   "name": "ami_socket",
-  "description": "Get AMI Message",
+  "description": "Connects to Asterisk's Manager Interface port and emits events per each AMI event.",
   "version": "0.0.1",
   "dependencies": {}
 }
