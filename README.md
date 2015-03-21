@@ -23,7 +23,7 @@ ami_socket.on(AMI_EVENT, function (DATA) {} );
 * Cdr
 * Newexten
 
-**DATA** is a hash of the message. e.g. for a QueueMemberStatus message
+**DATA is a hash of the message. e.g. for a QueueMemberStatus message**
 ```
 {
   Event: 'QueueMemberStatus',
