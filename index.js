@@ -22,14 +22,13 @@ module.exports.connect = function (host,port,username,password) {
     ami_event_hash = {};
 
     function emit_event(hash) {
-      //console.log(hash)
       module.exports.emit(hash['Event'],hash);
     }
 
     function parse_line (line) {
       space = line.indexOf(' ');
       name = line.substring(0,space - 1);
-      info = line.substring(space + 1, line.length - 1);
+      info = line.substring(space + 1);
 
       if ( name == 'Event' ) {
         ami_event_found = true;
@@ -45,17 +44,13 @@ module.exports.connect = function (host,port,username,password) {
     }
 
     function parse_response (response) {
-      remaining_string = response;
-      while ( remaining_string.length > 0 ) {
-        newline = remaining_string.indexOf('\n');
-        current_string = remaining_string.substring(0,newline);
-        remaining_string = remaining_string.substring(newline + 1);
-        parse_line(current_string);
-      }
+      response_by_line = response.split('\n');
+      response_by_line.forEach( function (line) {
+        parse_line(line.trim());
+      });
     }
 
     parse_response(data);
-
   });
 
   client.on('close', function () {
